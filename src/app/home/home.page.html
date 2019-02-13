@@ -34,6 +34,18 @@
                   {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
                 </ion-buttons>
             </span>
+
+            <span *ngIf="pokemon.type == 'Fantasma'" style="position:absolute; right: 15px; color:rgb(14, 13, 13)">
+              <ion-buttons (click)="opciones(pokemon.id,pokemon.name,pokemon.type,pokemon.zone,pokemon.generation)">
+                  {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
+                </ion-buttons>
+            </span>
+
+            <span *ngIf="pokemon.type == 'Agua'" style="position:absolute; right: 15px; color:rgb(22, 183, 247)">
+              <ion-buttons (click)="opciones(pokemon.id,pokemon.name,pokemon.type,pokemon.zone,pokemon.generation)">
+                  {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
+                </ion-buttons>
+            </span>
           </h3>
           </ion-card-title>
     </ion-card-header>
