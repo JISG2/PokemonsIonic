@@ -1,12 +1,45 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Pokemons
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+  <!--Boton-->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="openModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  <ion-card *ngFor="let pokemon of pokemons"><!--Items Cards [routerLink]="['/list-details','item.id']"-->
+    <ion-card-header>
+        <ion-card-title>
+          <h3>{{pokemon.name}}
+            <span *ngIf="pokemon.type == 'Roca'" style="position:absolute; right: 15px; color:rgb(99, 99, 100)">
+              <ion-buttons (click)="opciones(pokemon.id,pokemon.name,pokemon.type,pokemon.zone,pokemon.generation)">
+                {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
+              </ion-buttons>
+            </span>
+            <span *ngIf="pokemon.type == 'Normal'" style="position:absolute; right: 15px; color:rgb(53, 30, 3)">
+              <ion-buttons (click)="opciones(pokemon.id,pokemon.name,pokemon.type,pokemon.zone,pokemon.generation)">
+                {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
+              </ion-buttons>
+            </span>
+            
+            <span *ngIf="pokemon.type == 'Electrico'" style="position:absolute; right: 15px; color:rgb(241, 207, 9)">
+              <ion-buttons (click)="opciones(pokemon.id,pokemon.name,pokemon.type,pokemon.zone,pokemon.generation)">
+                  {{pokemon.type}}<ion-icon slot="icon-only" name="more" style="color:rgb(139, 138, 137)"></ion-icon>
+                </ion-buttons>
+            </span>
+          </h3>
+          </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Zona: {{pokemon.zone}}</p>
+      <p>Generación: {{pokemon.generation}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

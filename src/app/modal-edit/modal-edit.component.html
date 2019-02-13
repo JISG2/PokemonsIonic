@@ -1,0 +1,26 @@
+<form [formGroup]="editPokemon">
+  <ion-item>
+    <ion-input type="text" formControlName="name" placeholder="Nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select formControlName="type" placeholder="Elija una opcion">
+      <ion-select-option name="Roca" value="Roca">Roca</ion-select-option>
+      <ion-select-option name="Electrico" value="Electrico">Eléctrico</ion-select-option>
+      <ion-select-option name="Normal" value="Normal">Normal</ion-select-option>
+      <ion-select-option name="Fantasma" value="Fantasma">Fantasma</ion-select-option>
+      <ion-select-option name="Agua" value="Agua">Agua</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+<ion-item>
+  <ion-input type="text" formControlName="zone" placeholder="Zona"></ion-input>
+
+</ion-item>
+
+<ion-item>
+  <ion-input type="number" formControlName="generation" placeholder="Generación"></ion-input>
+  
+</ion-item>
+<ion-button type="button" (click)="actualizarPokemon()" [disabled]="editPokemon.invalid">Editar</ion-button>
+</form>
